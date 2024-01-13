@@ -15,6 +15,8 @@ public class client
     private void connectRemote() {
         try
         {
+
+
             TreeMap<Double, String> pary = new TreeMap<Double, String>();
             /*Adding elements to TreeMap*/
             pary.put(21.8, "Gdynia");
@@ -28,8 +30,10 @@ public class client
 
 
             zad1 z= (zad1) reg.lookup("hi serwer");
-            SortedMap<Double, String> pary_sort=z.valueSort(pary);
+            zad2 z2= (zad2) reg.lookup("hi serwer");
 
+            SortedMap<Double, String> pary_sort=z.valueSort(pary);
+            System.out.println("-------- ZAD 1 --------");
             Set set = pary.entrySet();
             Iterator iterator = set.iterator();
             while(iterator.hasNext()) {
@@ -38,7 +42,12 @@ public class client
                 System.out.println(mentry.getValue());
             }
 
+            System.out.println("\n-------- ZAD 2 --------");
 
+            String slowo="lokomotywa";
+            System.out.println("Słowo: "+slowo+" Szyfr: "+ z2.szyfr(slowo));
+            slowo="film";
+            System.out.println("Słowo: "+slowo+" Szyfr: "+ z2.szyfr(slowo));
         }
         catch(NotBoundException|RemoteException e)
         {

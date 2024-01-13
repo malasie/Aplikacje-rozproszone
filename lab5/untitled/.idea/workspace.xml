@@ -21,9 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2as0ydMcAdqIvEfHf67entwR3xp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Maria/Projekty/Github/Gniazda",
+    "last_opened_file_path": "D:/Maria/Projekty/Github/Aplikacje-rozproszone/lab5",
     "onboarding.tips.debug.path": "D:/Maria/Projekty/Github/Aplikacje-rozproszone/lab5/untitled/src/Main.java"
   }
 }]]></component>

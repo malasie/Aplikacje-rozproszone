@@ -2,12 +2,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
-public class serwer extends UnicastRemoteObject implements zad1 {
+public class serwer extends UnicastRemoteObject implements zad1, zad2 {
     public serwer() throws RemoteException {
         super();
     }
@@ -33,6 +30,41 @@ public class serwer extends UnicastRemoteObject implements zad1 {
         return tmap;
     }
 
+    @Override
+    public String szyfr(String slowo) throws RemoteException{
+        char[] ch = slowo.toCharArray();
+        char[] samogloski = "aąeęioóuy".toCharArray();
+        char s1='a';
+        char s2='a';
+        int pozycja=-1;
+        String zaszyfrowane="";
+        for( int i=0; i<slowo.length(); i++){
+            if("bcćdfghjklłmnńpqrsśtwxzźżBCĆDFGHJKLŁMNŃPQRSŚTWXZŹŻ".indexOf(slowo.charAt(i))!=-1){
+                if (s1=='a'){
+                   pozycja=i;
+                   s1=slowo.charAt(i);
+                   s2=slowo.charAt(i);
+                   zaszyfrowane += s1;
+                }
+                else{
+                    s1=s2;
+                    s2=slowo.charAt(i);
+                    zaszyfrowane += s1;
+                }
+
+
+            }
+            else{
+                zaszyfrowane += slowo.charAt(i);
+            }
+            if(i==slowo.length()-1){
+                zaszyfrowane =zaszyfrowane.substring(0, pozycja) + s2
+                        + zaszyfrowane.substring(pozycja + 1);
+            }
+        }
+
+        return zaszyfrowane;
+    }
 
 
     public static void main(String args[]) throws RemoteException {
